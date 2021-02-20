@@ -1,22 +1,35 @@
 import trips from "../json/trips.json";
+import { useEffect, useState } from "react";
 export default function HomePage() {
   console.log(trips);
   const trip = trips.trips[0];
   console.log(trip);
+
+  const [textInput, setTextInput] = useState("");
+  useEffect(() => {}, []);
+
   return (
     <div className="w-full font-prompt ">
-      <header className="bg-red-400 w-full ">
-        <h1 className="pt-12 text-6xl text-blue-400 bg-yellow-300 text-center py-3">
+      <header className=" w-full ">
+        <h1 className="pt-12 text-6xl text-blue-400  text-center py-3">
           เที่ยวไหนดี
         </h1>
-        <p>Search bar</p>
+        {/* <p>Search bar</p> */}
+        <form className=" w-7/12 mx-auto border-blue-400 border-b-2 ">
+          <input
+            className="w-full focus:outline-none  text-center "
+            type="text"
+            value={textInput}
+            onChange={(event) => setTextInput(event.target.value)}
+          />
+        </form>
       </header>
       <div className="mt-3">
-        <div className="w-8/12  mx-auto py-4 grid grid-cols-3 space-x-6  relative">
+        <div className="w-8/12 max-w-screen-sm mx-auto py-4 grid grid-cols-3 space-x-6  relative">
           <div className="px-3 pt-3">
             <img
               className="object-cover h-full w-full rounded-3xl "
-              src="https://img.wongnai.com/p/1920x0/2019/07/02/ffef3d6d900146e9b17dbd726fd8bab6.jpg"
+              src={trip.photos[0]}
               alt="pic"
             />
           </div>
