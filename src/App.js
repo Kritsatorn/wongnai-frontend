@@ -1,4 +1,16 @@
+import React from "react";
+import { BrowserRouter, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
 function App() {
-  return <div className="text-blue-500 bg-blue-200">Hello WOrld</div>;
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <HomePage />
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  );
 }
 export default App;
