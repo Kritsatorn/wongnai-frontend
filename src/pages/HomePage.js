@@ -11,11 +11,11 @@ export default function HomePage() {
   return (
     <div className="w-full font-prompt ">
       <header className=" w-full ">
-        <h1 className="pt-12 text-6xl text-blue-400  text-center py-3">
+        <h1 className="pt-12 text-6xl leading-relaxed text-blue-400  text-center py-3">
           เที่ยวไหนดี
         </h1>
         {/* <p>Search bar</p> */}
-        <form className=" w-7/12 mx-auto border-blue-400 border-b-2 ">
+        <form className=" w-7/12 mx-auto border-blue-400 border-b-2 pb-1">
           <input
             className="w-full focus:outline-none  text-center "
             type="text"
