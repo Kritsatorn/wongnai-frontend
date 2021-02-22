@@ -14,6 +14,7 @@ const SearchBar = () => {
         type="text"
         ref={inputRef}
         value={textSearch}
+        placeholder="หาที่เที่ยวแล้วไปกัน...."
         onChange={(event) => setTextSearch(event.target.value)}
         onFocus={(event) => event.target.select()}
       />
