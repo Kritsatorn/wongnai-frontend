@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { SearchContext } from "../context/SearchContext";
 const SearchBar = () => {
-  const [textInput, setTextInput] = useState("");
+  //const [textInput, setTextInput] = useState("");
+  const { textSearch, setTextSearch } = useContext(SearchContext);
   return (
     <>
       {/* <div> ANS : {textInput} </div> */}
@@ -8,8 +10,8 @@ const SearchBar = () => {
         <input
           className="w-full focus:outline-none  text-center"
           type="text"
-          value={textInput}
-          onChange={(event) => setTextInput(event.target.value)}
+          value={textSearch}
+          onChange={(event) => setTextSearch(event.target.value)}
         />
       </form>
     </>
