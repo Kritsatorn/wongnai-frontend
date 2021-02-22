@@ -7,7 +7,7 @@ const SearchBar = () => {
     <>
       {/* <div> ANS : {textInput} </div> */}
       <form
-        className=" w-7/12 mx-auto pb-1 border-blue-400 border-b-2 "
+        className="w-10/12 md:w-7/12 mx-auto pb-1 border-blue-400 border-b-2 "
         onSubmit={searchSubmit}
       >
         <input
