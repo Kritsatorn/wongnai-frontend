@@ -5,10 +5,12 @@ const SearchContext = React.createContext();
 const APIpath = "http://localhost:3001/api/trips";
 
 const SearchContextProvider = (props) => {
-  const [textSearch, setTextSearch] = useState("");
-  const [tripData, setTripData] = useState(null);
   const location = useLocation();
   const history = useHistory();
+  const [textSearch, setTextSearch] = useState(
+    location.search ? location.search.substr(9) : ""
+  );
+  const [tripData, setTripData] = useState(null);
 
   const addText = (text) => {
     setTextSearch((prevText) => (prevText ? prevText + " " + text : text));
@@ -37,7 +39,7 @@ const SearchContextProvider = (props) => {
     };
     console.log("locaotion ", location);
     fetchData();
-  }, []);
+  }, [location]);
 
   useEffect(() => {
     console.log("search : ", textSearch);

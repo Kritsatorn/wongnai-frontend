@@ -19,7 +19,9 @@ const TagsTripCard = ({ tag, isLast }) => {
 const ContentTripCard = ({ title, description, url }) => {
   return (
     <>
-      <h1 className="font-black text-2xl">{title}</h1>
+      <a className="font-black text-2xl" href={url}>
+        {title}
+      </a>
       <p className="mt-2  font-medium text-gray-400 tracking-tighter  leading-relaxed">
         {description.substring(0, 101) + "... "}
         <a className="inline-block text-blue-300  underline  " href={url}>
