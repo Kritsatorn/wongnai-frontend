@@ -2,7 +2,9 @@ import { useContext } from "react";
 import { SearchContext } from "../context/SearchContext";
 const SearchBar = () => {
   //const [textInput, setTextInput] = useState("");
-  const { textSearch, setTextSearch, searchSubmit } = useContext(SearchContext);
+  const { textSearch, setTextSearch, searchSubmit, inputRef } = useContext(
+    SearchContext
+  );
   return (
     <>
       {/* <div> ANS : {textInput} </div> */}
@@ -16,6 +18,7 @@ const SearchBar = () => {
           value={textSearch}
           onChange={(event) => setTextSearch(event.target.value)}
           onFocus={(event) => event.target.select()}
+          ref={inputRef}
         />
       </form>
     </>

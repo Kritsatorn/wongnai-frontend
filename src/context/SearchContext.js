@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useHistory, useLocation } from "react-router-dom";
 const SearchContext = React.createContext();
@@ -11,9 +11,11 @@ const SearchContextProvider = (props) => {
     location.search ? location.search.substr(9) : ""
   );
   const [tripData, setTripData] = useState(null);
+  const inputRef = useRef(null);
 
   const addText = (text) => {
     setTextSearch((prevText) => (prevText ? prevText + " " + text : text));
+    inputRef.current.focus();
   };
 
   const searchSubmit = (event) => {
@@ -47,7 +49,14 @@ const SearchContextProvider = (props) => {
 
   return (
     <SearchContext.Provider
-      value={{ textSearch, setTextSearch, addText, searchSubmit, tripData }}
+      value={{
+        textSearch,
+        setTextSearch,
+        addText,
+        searchSubmit,
+        tripData,
+        inputRef,
+      }}
     >
       {props.children}
     </SearchContext.Provider>
