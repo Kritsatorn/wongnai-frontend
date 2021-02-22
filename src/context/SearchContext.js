@@ -8,7 +8,10 @@ const SearchContextProvider = (props) => {
   const location = useLocation();
   const history = useHistory();
   const [textSearch, setTextSearch] = useState(
-    location.search ? location.search.substr(9) : ""
+    // bug translate from url link in Thai
+    // location.search ? location.search.substr(9) : ""
+    // use This "" instead
+    ""
   );
   const [tripData, setTripData] = useState(null);
   const inputRef = useRef(null);
