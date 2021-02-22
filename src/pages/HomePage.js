@@ -1,10 +1,8 @@
-import trips from "../json/trips.json";
 import { useContext } from "react";
 import SearchBar from "../components/SearchBar";
 import TripCard from "../components/TripCard";
 import { SearchContext } from "../context/SearchContext";
 export default function HomePage() {
-  const trip = trips.trips[0];
   const { tripData } = useContext(SearchContext);
   return (
     <div className="w-full font-prompt ">
