@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import axios from "axios";
 import { useHistory, useLocation } from "react-router-dom";
+import axios from "axios";
+
 const SearchContext = React.createContext();
 const APIpath = "http://localhost:3001/api/trips";
 
@@ -46,19 +47,15 @@ const SearchContextProvider = (props) => {
     fetchData();
   }, [location]);
 
-  useEffect(() => {
-    console.log("search : ", textSearch);
-  }, [textSearch]);
-
   return (
     <SearchContext.Provider
       value={{
-        textSearch,
-        setTextSearch,
-        addText,
-        searchSubmit,
         tripData,
         inputRef,
+        addText,
+        textSearch,
+        setTextSearch,
+        searchSubmit,
       }}
     >
       {props.children}

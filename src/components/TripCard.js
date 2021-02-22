@@ -12,10 +12,10 @@ const ContentTripCard = ({ title, description, url }) => {
       >
         {title}
       </a>
-      <p className="mt-2 text-center md:text-left font-medium text-gray-400 tracking-tighter  leading-relaxed">
+      <p className="mt-2 text-center md:text-left font-medium text-gray-400 tracking-tighter leading-relaxed">
         {description.substring(0, 101) + "... "}
         <a
-          className="inline-block text-blue-300  underline  "
+          className="inline-block text-blue-300 underline"
           href={url}
           rel="noreferrer"
           target="_blank"
@@ -87,7 +87,7 @@ const TripCard = ({ trip }) => {
         />
 
         {/* tags */}
-        <p className=" mt-2 text-xs text-center md:text-left  text-gray-400 tracking-tighter">
+        <p className="mt-2 text-xs text-center md:text-left text-gray-400 tracking-tighter">
           หมวด{"  -  "}
           {trip.tags.map((tag, i, arr) => (
             <TagsTripCard

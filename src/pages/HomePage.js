@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import SearchBar from "../components/SearchBar";
 import TripCard from "../components/TripCard";
+import SearchBar from "../components/SearchBar";
 import { SearchContext } from "../context/SearchContext";
 
 const Loading = () => {
@@ -16,7 +16,7 @@ export default function HomePage() {
   return (
     <div className="w-full font-prompt ">
       <header className=" w-full ">
-        <h1 className=" pt-12 py-3 text-6xl text-blue-400 text-center leading-relaxed ">
+        <h1 className="pt-12 py-3 text-6xl text-blue-400 text-center leading-relaxed ">
           เที่ยวไหนดี
         </h1>
         <SearchBar />
