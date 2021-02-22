@@ -2,8 +2,10 @@ import trips from "../json/trips.json";
 // import { useEffect, useState } from "react";
 import SearchBar from "../components/SearchBar";
 import TripCard from "../components/TripCard";
+
 export default function HomePage() {
   const trip = trips.trips[0];
+
   return (
     <div className="w-full font-prompt ">
       <header className=" w-full ">

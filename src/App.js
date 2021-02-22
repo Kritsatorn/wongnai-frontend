@@ -1,16 +1,17 @@
 import React from "react";
-import { BrowserRouter, Switch } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import { Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import { SearchContextProvider } from "./context/SearchContext";
 function App() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/">
+    <Switch>
+      <Route path="/">
+        <SearchContextProvider>
           <HomePage />
-        </Route>
-      </Switch>
-    </BrowserRouter>
+        </SearchContextProvider>
+      </Route>
+    </Switch>
   );
 }
 export default App;

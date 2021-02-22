@@ -2,11 +2,14 @@ import { useContext } from "react";
 import { SearchContext } from "../context/SearchContext";
 const SearchBar = () => {
   //const [textInput, setTextInput] = useState("");
-  const { textSearch, setTextSearch } = useContext(SearchContext);
+  const { textSearch, setTextSearch, searchSubmit } = useContext(SearchContext);
   return (
     <>
       {/* <div> ANS : {textInput} </div> */}
-      <form className=" w-7/12 mx-auto pb-1 border-blue-400 border-b-2 ">
+      <form
+        className=" w-7/12 mx-auto pb-1 border-blue-400 border-b-2 "
+        onSubmit={searchSubmit}
+      >
         <input
           className="w-full focus:outline-none  text-center"
           type="text"
