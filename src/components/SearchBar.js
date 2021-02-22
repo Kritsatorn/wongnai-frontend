@@ -15,6 +15,7 @@ const SearchBar = () => {
           type="text"
           value={textSearch}
           onChange={(event) => setTextSearch(event.target.value)}
+          onFocus={(event) => event.target.select()}
         />
       </form>
     </>

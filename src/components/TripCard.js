@@ -33,7 +33,7 @@ const TagsTripCard = ({ tag, isLast }) => {
     <span>
       {isLast ? "และ   " : null}
       <span
-        className="underline break-words whitespace-nowrap"
+        className="underline break-words whitespace-nowrap cursor-pointer"
         onClick={() => addText(tag)}
       >
         {tag}
