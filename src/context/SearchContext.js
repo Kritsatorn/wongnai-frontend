@@ -1,6 +1,6 @@
+import axios from "axios";
 import React, { useState, useEffect, useRef } from "react";
 import { useHistory, useLocation } from "react-router-dom";
-import axios from "axios";
 
 const SearchContext = React.createContext();
 const APIpath = "http://localhost:3001/api/trips";
@@ -8,12 +8,11 @@ const APIpath = "http://localhost:3001/api/trips";
 const SearchContextProvider = (props) => {
   const location = useLocation();
   const history = useHistory();
-  const [textSearch, setTextSearch] = useState(
-    // bug translate from url link in Thai
-    // location.search ? location.search.substr(9) : ""
-    // use This "" instead
-    ""
-  );
+  // bug translate from url link in Thai
+  // location.search ? location.search.substr(9) : ""
+  // use This "" instead
+  const [textSearch, setTextSearch] = useState("");
+
   const [tripData, setTripData] = useState(null);
   const inputRef = useRef(null);
 
@@ -43,7 +42,6 @@ const SearchContextProvider = (props) => {
         console.log("fetch error ", err);
       }
     };
-    console.log("locaotion ", location);
     fetchData();
   }, [location]);
 

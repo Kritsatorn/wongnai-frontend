@@ -1,8 +1,8 @@
 import React from "react";
-import { Switch } from "react-router-dom";
-import { Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import { Switch, Route } from "react-router-dom";
 import { SearchContextProvider } from "./context/SearchContext";
+
 function App() {
   return (
     <Switch>
