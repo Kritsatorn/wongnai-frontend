@@ -4,7 +4,7 @@ import { SearchContextProvider, SearchContext } from "../context/SearchContext";
 
 const Sample = () => {
   const { setTextSearch, textSearch } = useContext(SearchContext);
-  const text = "hi";
+  const text = "Hello world";
   const setT = useCallback(() => setTextSearch(text), [text]);
   return { setT, textSearch };
 };
@@ -16,8 +16,8 @@ jest.mock("react-router-dom", () => ({
   }),
 }));
 
-test("Test @1 ", () => {
-  // It's complex and take a lot of time to write test context provider.
+test("SearchContext can be rendered as mock of textsearch", () => {
+  // It's complex and take a lot of time to understand & I'm not sure is it right ?.
   const wrapper = ({ children }) => (
     <SearchContextProvider> {children} </SearchContextProvider>
   );

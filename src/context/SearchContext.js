@@ -33,16 +33,22 @@ const SearchContextProvider = (props) => {
   };
 
   useEffect(() => {
+    const source = axios.CancelToken.source();
     const fetchData = async () => {
       try {
-        const res = await axios.get(`${APIpath}${location.search}`);
-        console.log("data ", res.data);
-        setTripData(res.data.data);
-      } catch (err) {
-        console.log("fetch error ", err);
+        const res = await axios.get(`${APIpath}${location.search}`, {
+          cancelToken: source.token,
+        });
+        return res ? res : null;
+      } catch (error) {
+        if (axios.isCancel(error)) {
+        } else {
+          throw error;
+        }
       }
     };
-    fetchData();
+
+    fetchData().then((res) => setTripData(res.data.data));
   }, [location]);
 
   return (
